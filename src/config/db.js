@@ -6,10 +6,8 @@ dotenv.config();
 const { Pool } = pkg;
 const NEON = process.env.NEON;
 
-// Database connection
 const pool = new Pool({ connectionString: NEON });
 
-// Query helper
 const queryDB = async (query, params = []) => {
   const client = await pool.connect();
   try {
